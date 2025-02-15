@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,3 +74,80 @@
     <script src="script.js"></script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Games Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#ratings">Ratings</a></li>
+            <li><a href="#price-vs-rating">Price & Ratings</a></li>
+            <li><a href="#genre-popularity">Genres</a></li>
+            <li><a href="#predictor">Predict Rating</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>The Science Behind PC Game Success</h1>
+        <p>Uncovering trends in pricing, ratings, and genres.</p>
+    </header>
+
+    <section id="overview">
+        <h2>Introduction</h2>
+        <p>What makes a game successful? We analyzed thousands of games to find out.</p>
+        <a href="data/games_data.json" download>📂 Download Dataset</a>
+    </section>
+
+    <section id="ratings">
+        <h2>The Rise and Fall of Game Ratings</h2>
+        <canvas id="ratingsChart"></canvas>
+    </section>
+
+    <section id="price-vs-rating">
+        <h2>Does Price Affect Game Ratings?</h2>
+        <canvas id="priceChart"></canvas>
+    </section>
+
+    <section id="genre-popularity">
+        <h2>The Genre Wars: What Gamers Love</h2>
+        <canvas id="genreChart"></canvas>
+    </section>
+
+    <!-- New: Game Rating Predictor -->
+    <section id="predictor">
+        <h2>Predict Your Game's Rating</h2>
+        <label for="gamePrice">Game Price ($):</label>
+        <input type="number" id="gamePrice" placeholder="Enter price">
+
+        <label for="gameGenre">Game Genre:</label>
+        <select id="gameGenre">
+            <option>Action</option>
+            <option>RPG</option>
+            <option>Indie</option>
+            <option>Strategy</option>
+            <option>Sports</option>
+        </select>
+
+        <button onclick="predictRating()">Predict Rating</button>
+        <p id="predictedRating">Predicted Rating: ?</p>
+    </section>
+
+    <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>Price doesn’t determine success—engagement and content matter more!</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+>>>>>>> 648e7ba ( updated ui)
