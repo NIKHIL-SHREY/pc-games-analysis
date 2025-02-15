@@ -1,97 +1,68 @@
-/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
-/* Header Styles */
-header {
-    background: linear-gradient(to right, #2c3e50, #4ca1af);
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-/* Navigation */
+/* Navbar */
 nav {
-    display: flex;
-    justify-content: center;
-    background: #34495e;
+    background-color: #222;
     padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 1.2em;
-}
-
-nav a:hover {
-    background: #4ca1af;
-    border-radius: 5px;
-}
-
-/* Main Content */
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-/* Sections */
-.section {
-    margin: 40px 0;
-}
-
-.section h2 {
-    border-bottom: 3px solid #4ca1af;
-    padding-bottom: 5px;
-    color: #2c3e50;
-}
-
-/* Images */
-.image-container {
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
 }
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+nav ul li {
+    margin: 0 15px;
 }
-
-/* Footer */
-footer {
-    background: #2c3e50;
+nav ul li a {
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-}
-
-footer a {
-    color: #4ca1af;
     text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: cyan;
 }
 
-footer a:hover {
-    text-decoration: underline;
+header {
+    background-color: #1e1e1e;
+    padding: 80px 20px;
+    font-size: 1.5em;
+    margin-top: 50px;
+}
+
+section {
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+section:hover {
+    transform: scale(1.03);
+}
+
+button {
+    background-color: cyan;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: lime;
 }

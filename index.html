@@ -3,65 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Games Data Story</title>
+    <title>PC Games Analysis</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+    <!-- Navigation Menu -->
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#ratings">Ratings</a></li>
+            <li><a href="#price-vs-rating">Price & Ratings</a></li>
+            <li><a href="#genre-popularity">Genres</a></li>
+            <li><a href="#predictor">Predict Rating</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+
     <header>
-        <h1>🎮 The Evolution of PC Games</h1>
-        <p>Data-driven insights into gaming trends, ratings, and pricing.</p>
+        <h1>The Science Behind PC Game Success</h1>
+        <p>Uncovering trends in pricing, ratings, and genres.</p>
     </header>
-    
-    <section id="intro">
+
+    <section id="overview">
         <h2>Introduction</h2>
-        <p>Have you ever wondered how PC games have evolved over time? Do higher-priced games get better ratings? What are the most popular gaming genres? In this analysis, we explore these questions using data-driven insights.</p>
+        <p>What makes a game successful? We analyzed thousands of games to find out.</p>
+        <a href="data/games_data.json" download>📂 Download Dataset</a>
     </section>
-    
-    <section id="insights">
-        <h2>Key Findings</h2>
-        <div class="gallery">
-            <figure>
-                <img src="images/overview_graph.png" alt="Overview of dataset">
-                <figcaption>Dataset Overview</figcaption>
-            </figure>
-            <figure>
-                <img src="images/price_vs_ratings.png" alt="Price vs Ratings">
-                <figcaption>Are expensive games rated higher?</figcaption>
-            </figure>
-            <figure>
-                <img src="images/genre_trends.png" alt="Popular Genres">
-                <figcaption>Most popular gaming genres</figcaption>
-            </figure>
-            <figure>
-                <img src="images/time_trends.png" alt="Gaming Trends Over Time">
-                <figcaption>Gaming evolution over the years</figcaption>
-            </figure>
-        </div>
+
+    <section id="ratings">
+        <h2>The Rise and Fall of Game Ratings</h2>
+        <canvas id="ratingsChart"></canvas>
     </section>
-    
-    <section id="story">
-        <h2>The Story Behind the Data</h2>
-        <p>The PC gaming industry has seen a massive transformation over the years. From early pixelated games to high-budget AAA titles, the market has expanded exponentially. Our analysis reveals:</p>
-        <ul>
-            <li>🔹 **Higher-priced games tend to have better ratings**, but there are exceptions.</li>
-            <li>🔹 **Action and RPG genres dominate the gaming industry**, whereas simulation games have niche popularity.</li>
-            <li>🔹 **Game prices fluctuate significantly**, but price does not always guarantee quality.</li>
-        </ul>
+
+    <section id="price-vs-rating">
+        <h2>Does Price Affect Game Ratings?</h2>
+        <canvas id="priceChart"></canvas>
     </section>
-    
-    <section id="links">
-        <h2>Explore More</h2>
-        <p>Check out the full dataset and code below:</p>
-        <ul>
-            <li>📊 <a href="YOUR_KAGGLE_DATASET_LINK" target="_blank">Dataset on Kaggle</a></li>
-            <li>📜 <a href="YOUR_COLAB_NOTEBOOK_LINK" target="_blank">Analysis Code on Google Colab</a></li>
-            <li>💻 <a href="https://github.com/YOUR_USERNAME/pc-games-analysis" target="_blank">GitHub Repository</a></li>
-        </ul>
+
+    <section id="genre-popularity">
+        <h2>The Genre Wars: What Gamers Love</h2>
+        <canvas id="genreChart"></canvas>
     </section>
-    
-    <footer>
-        <img src="images/your_image.jpg" alt="Your Image" class="profile">
-        <p>Created by <strong>Your Name</strong></p>
-    </footer>
+
+    <!-- New: Game Rating Predictor -->
+    <section id="predictor">
+        <h2>Predict Your Game's Rating</h2>
+        <label for="gamePrice">Game Price ($):</label>
+        <input type="number" id="gamePrice" placeholder="Enter price">
+
+        <label for="gameGenre">Game Genre:</label>
+        <select id="gameGenre">
+            <option>Action</option>
+            <option>RPG</option>
+            <option>Indie</option>
+            <option>Strategy</option>
+            <option>Sports</option>
+        </select>
+
+        <button onclick="predictRating()">Predict Rating</button>
+        <p id="predictedRating">Predicted Rating: ?</p>
+    </section>
+
+    <section id="conclusion">
+        <h2>Conclusion</h2>
+        <p>Price doesn’t determine success—engagement and content matter more!</p>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
