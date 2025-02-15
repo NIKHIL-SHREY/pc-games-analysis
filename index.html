@@ -3,36 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC Games Analysis</title>
+    <title>PC Games Data Analysis</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
-        <h1>PC Games Analysis</h1>
-        <p>Unveiling the trends and insights of PC games through data storytelling.</p>
+        <h1>PC Games Data Analysis</h1>
+        <p>From data to insights: Understanding the gaming industry.</p>
     </header>
 
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#overview">Data Overview</a></li>
+            <li><a href="#insights">Insights</a></li>
+            <li><a href="#prediction">Prediction</a></li>
+            <li><a href="#conclusion">Conclusion</a></li>
+        </ul>
+    </nav>
+
     <section id="intro">
-        <h2>The Evolution of PC Games</h2>
-        <p>From classic arcade games to modern AAA titles, the gaming industry has seen significant evolution.</p>
-        <img src="images/game-history.jpg" alt="Gaming Evolution">
+        <h2>Why This Dataset?</h2>
+        <p>Gaming is a billion-dollar industry, but what makes a game successful? We explore this using data.</p>
+        <img src="images/gaming-evolution.jpg" alt="Gaming Evolution">
     </section>
 
-    <section id="analysis">
+    <section id="overview">
+        <h2>Exploring the Dataset</h2>
+        <p>The dataset includes attributes like price, Metacritic rating, genre, and memory requirements.</p>
+        <img src="images/data-overview.jpg" alt="Data Overview">
+    </section>
+
+    <section id="insights">
         <h2>Key Insights</h2>
+        
+        <h3>1. Does Price Affect Ratings?</h3>
+        <p>We analyzed whether expensive games receive better ratings.</p>
         <div class="chart-container">
             <canvas id="priceVsRatingChart"></canvas>
         </div>
+
+        <h3>2. Most Popular Genres</h3>
+        <p>Which game genres dominate the industry?</p>
         <div class="chart-container">
             <canvas id="genreChart"></canvas>
+        </div>
+
+        <h3>3. Rating Trends Over Time</h3>
+        <p>Are games improving over the years?</p>
+        <div class="chart-container">
+            <canvas id="ratingOverTimeChart"></canvas>
+        </div>
+    </section>
+
+    <section id="prediction">
+        <h2>Predicting Game Ratings</h2>
+        <p>Based on our analysis, can we predict how well a game will perform?</p>
+        <div class="chart-container">
+            <canvas id="predictionChart"></canvas>
         </div>
     </section>
 
     <section id="conclusion">
-        <h2>Final Thoughts</h2>
-        <p>As gaming continues to evolve, data-driven insights help developers create better experiences.</p>
-        <p>Stay tuned for more analyses!</p>
+        <h2>Final Takeaways</h2>
+        <p>Data reveals surprising trends in gaming. More research can improve our understanding of game success.</p>
     </section>
 
     <footer>
