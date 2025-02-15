@@ -1,66 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Price vs Rating Chart
-    new Chart(document.getElementById("priceVsRatingChart"), {
-        type: "scatter",
-        data: {
-            datasets: [{
-                label: "Price vs Rating",
-                data: [{ x: 10, y: 85 }, { x: 20, y: 78 }, { x: 5, y: 90 }, { x: 50, y: 60 }],
-                backgroundColor: "#ffcc00"
-            }]
-        },
-        options: {
-            scales: {
-                x: { title: { display: true, text: "Price ($)" } },
-                y: { title: { display: true, text: "Metacritic Rating" } }
-            }
-        }
-    });
-
-    // Top 10 Genres Chart
-    new Chart(document.getElementById("genreChart"), {
-        type: "bar",
-        data: {
-            labels: ["Action", "RPG", "Shooter", "Adventure"],
-            datasets: [{
-                label: "Popularity",
-                data: [200, 180, 160, 140],
-                backgroundColor: ["#ff6600", "#ff3300", "#ff0000", "#9900ff"]
-            }]
-        },
-        options: {
-            indexAxis: "y",
-            scales: {
-                x: { title: { display: true, text: "Number of Games" } }
-            }
-        }
-    });
-
-    // Rating Over Time Chart
-    new Chart(document.getElementById("ratingOverTimeChart"), {
-        type: "line",
-        data: {
-            labels: ["2000", "2005", "2010", "2015", "2020"],
-            datasets: [{
-                label: "Average Rating",
-                data: [75, 78, 80, 85, 88],
-                borderColor: "#00ffcc",
-                borderWidth: 2
-            }]
-        }
-    });
-
-    // Prediction Chart
-    new Chart(document.getElementById("predictionChart"), {
-        type: "line",
-        data: {
-            labels: ["Game A", "Game B", "Game C"],
-            datasets: [{
-                label: "Predicted Rating",
-                data: [85, 78, 90],
-                borderColor: "#00ccff",
-                borderWidth: 2
-            }]
-        }
-    });
+    smoothScrolling();
+    imageHoverEffects();
 });
+
+// Smooth scrolling for better navigation
+function smoothScrolling() {
+    document.querySelectorAll("a[href^='#']").forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute("href"));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 50,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+}
+
+// Hover effect for images
+function imageHoverEffects() {
+    const images = document.querySelectorAll(".analysis-box img");
+    images.forEach(img => {
+        img.addEventListener("mouseenter", function () {
+            this.style.transform = "scale(1.05)";
+            this.style.transition = "0.3s ease-in-out";
+        });
+        img.addEventListener("mouseleave", function () {
+            this.style.transform = "scale(1)";
+        });
+    });
+}
+
+// Game Metacritic Score Prediction
+function predictScore() {
+    let price = parseFloat(document.getElementById("price").value);
+    let memory = parseFloat(document.getElementById("memory").value);
+    let storage = parseFloat(document.getElementById("storage").value);
+
+    if (isNaN(price) || isNaN(memory) || isNaN(storage)) {
+        document.getElementById("predictionResult").innerText = "Please enter valid numbers.";
+        return;
+    }
+
+    // Simple prediction formula based on dataset trends (adjusted for better accuracy)
+    let predictedScore = 88 - (price * 0.7) - (memory * 0.4) - (storage * 0.3);
+    predictedScore = Math.max(0, Math.min(100, predictedScore)); // Ensure score is within 0-100 range
+
+    document.getElementById("predictionResult").innerText = `Estimated Metacritic Score: ${predictedScore.toFixed(1)}`;
+}

@@ -5,75 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PC Games Data Analysis</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <h1>PC Games Data Analysis</h1>
-        <p>From data to insights: Understanding the gaming industry.</p>
+        <p>Exploring the trends, insights, and future of PC gaming.</p>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#overview">Data Overview</a></li>
-            <li><a href="#insights">Insights</a></li>
-            <li><a href="#prediction">Prediction</a></li>
-            <li><a href="#conclusion">Conclusion</a></li>
-        </ul>
-    </nav>
-
-    <section id="intro">
-        <h2>Why This Dataset?</h2>
-        <p>Gaming is a billion-dollar industry, but what makes a game successful? We explore this using data.</p>
-        <img src="images/gaming-evolution.jpg" alt="Gaming Evolution">
+    <section id="introduction">
+        <h2>Why PC Games? Why This Dataset?</h2>
+        <p>Gaming is a massive industry, influencing millions worldwide. This dataset was chosen to understand how game prices, ratings, and trends evolve over time.</p>
+        <p>We aim to answer key questions: What makes a game successful? Does price impact ratings? What genres dominate? Let’s find out!</p>
     </section>
 
-    <section id="overview">
-        <h2>Exploring the Dataset</h2>
-        <p>The dataset includes attributes like price, Metacritic rating, genre, and memory requirements.</p>
-        <img src="images/data-overview.jpg" alt="Data Overview">
-    </section>
-
-    <section id="insights">
-        <h2>Key Insights</h2>
+    <section id="analysis">
+        <h2>Data Analysis & Visualizations</h2>
         
-        <h3>1. Does Price Affect Ratings?</h3>
-        <p>We analyzed whether expensive games receive better ratings.</p>
-        <div class="chart-container">
-            <canvas id="priceVsRatingChart"></canvas>
+        <div class="analysis-box">
+            <h3>1. Price vs. Ratings</h3>
+            <img src="assets/price_vs_rating.png" alt="Price vs Ratings">
+            <p>Does spending more money on a game guarantee a better experience? Our analysis explores this correlation.</p>
         </div>
 
-        <h3>2. Most Popular Genres</h3>
-        <p>Which game genres dominate the industry?</p>
-        <div class="chart-container">
-            <canvas id="genreChart"></canvas>
+        <div class="analysis-box">
+            <h3>2. Game Clusters</h3>
+            <img src="assets/game_clusters.png" alt="Game Clusters">
+            <p>Games are grouped based on pricing and ratings, revealing patterns in market segmentation.</p>
         </div>
 
-        <h3>3. Rating Trends Over Time</h3>
-        <p>Are games improving over the years?</p>
-        <div class="chart-container">
-            <canvas id="ratingOverTimeChart"></canvas>
+        <div class="analysis-box">
+            <h3>3. Time Series: How Have Ratings Changed?</h3>
+            <img src="assets/time_series.png" alt="Time Series Analysis">
+            <p>The trend of Metacritic ratings over the years. Are games improving?</p>
+        </div>
+
+        <div class="analysis-box">
+            <h3>4. ESRB Ratings</h3>
+            <img src="assets/esrb_distribution.png" alt="ESRB Ratings Distribution">
+            <p>Which age ratings dominate the market? A look at the distribution.</p>
+        </div>
+
+        <div class="analysis-box">
+            <h3>5. Most Popular Genres</h3>
+            <img src="assets/top10genre.png" alt="Top 10 Genres">
+            <p>The most common genres and what players love the most.</p>
+        </div>
+
+        <div class="analysis-box">
+            <h3>6. Single-Player vs. Multiplayer</h3>
+            <img src="assets/single_vs_multi.png" alt="Single vs Multiplayer">
+            <p>Is multiplayer gaming overtaking single-player experiences?</p>
+        </div>
+
+        <div class="analysis-box">
+            <h3>7. Feature Importance</h3>
+            <img src="assets/feature_importance.png" alt="Feature Importance">
+            <p>Which factors influence a game’s success the most?</p>
+        </div>
+
+        <div class="analysis-box">
+            <h3>8. Correlation Matrix</h3>
+            <img src="assets/corr_matrix.png" alt="Correlation Matrix">
+            <p>How different game attributes relate to each other.</p>
         </div>
     </section>
 
     <section id="prediction">
-        <h2>Predicting Game Ratings</h2>
-        <p>Based on our analysis, can we predict how well a game will perform?</p>
-        <div class="chart-container">
-            <canvas id="predictionChart"></canvas>
-        </div>
-    </section>
+        <h2>Predict a Game's Metacritic Score</h2>
+        <p>Enter game details to estimate its Metacritic rating.</p>
+        <form id="predictForm">
+            <label for="price">Price ($):</label>
+            <input type="number" id="price" required>
 
-    <section id="conclusion">
-        <h2>Final Takeaways</h2>
-        <p>Data reveals surprising trends in gaming. More research can improve our understanding of game success.</p>
+            <label for="memory">Memory (GB):</label>
+            <input type="number" id="memory" required>
+
+            <label for="storage">Storage (GB):</label>
+            <input type="number" id="storage" required>
+
+            <button type="button" onclick="predictScore()">Predict Score</button>
+        </form>
+        <p id="predictionResult"></p>
     </section>
 
     <footer>
-        <p>&copy; 2025 PC Games Analysis | Hosted on GitHub Pages</p>
+        <p>Created by <strong>Nikhil Kumar Shrey</strong></p>
+        <p>Dataset Source: <a href="https://www.kaggle.com/datasets/jesneuman/pc-games/data" target="_blank">Kaggle</a></p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
